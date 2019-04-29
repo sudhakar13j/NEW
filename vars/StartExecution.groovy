@@ -11,7 +11,7 @@ def call()
   stage('SendEmail')
   {
    def SampleEmail = new Email.SendEmail()
-   SampleEmail.SendEmail("sudhakar.anandan@ravsoftsolutions.com","deepak.kumar@ravsoftsolutions.com","demo_mail")
+   SampleEmail.SendEmail("sudhakar.anandan@ravsoftsolutions.com","sudhakar.anandan@ravsoftsolutions.com","demo_mail","Execution started")
    echo "Mail Sent Successfully"
   }
   stage('SendSMTP')
