@@ -14,5 +14,11 @@ def call()
    SampleEmail.SendEmail("sudhakar.anandan@ravsoftsolutions.com","deepak.kumar@ravsoftsolutions.com","demo_mail")
    echo "Mail Sent Successfully"
   }
+  stage('SendSMTP')
+  {
+	def SampleEmail = new Email.SendSMPTmail()
+   SampleEmail.sendMail("secure200.inmotionhosting.com","sudhakar.anandan@ravsoftsolutions.com","deepak.kumar@ravsoftsolutions.com","demo_mail")
+   echo "Mail Sent Successfully"
+  }
  }
 }
