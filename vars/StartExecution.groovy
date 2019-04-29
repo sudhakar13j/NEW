@@ -10,8 +10,8 @@ def call()
   }
   stage('SendEmail')
   {
-   def SampleEmail = new Scripts.SendEmail()
-   SampleEmail.SendEmail("sudhakar.anandan@ravsoftsolutions.com","deepak.kumar@ravsoftsolutions.com","demo_mail")
+   def SampleEmail = new Scripts.SentEmail()
+   SampleEmail.SentEmail("sudhakar.anandan@ravsoftsolutions.com","deepak.kumar@ravsoftsolutions.com","demo_mail")
    echo "Mail Sent Successfully"
   }
  }
