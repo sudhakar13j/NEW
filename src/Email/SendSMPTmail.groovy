@@ -19,5 +19,4 @@ def sendMail(host, sender, receivers, subject, text) {
     println 'Sending mail to ' + receivers + '.'
     Transport.send(message)
     println 'Mail sent.'
-	
-}
+	}
