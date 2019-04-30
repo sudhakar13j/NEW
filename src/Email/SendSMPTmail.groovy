@@ -20,9 +20,6 @@ def mailServer = instance.getDescriptor("hudson.tasks.Mailer")
 def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
 def extmailServer = instance.getDescriptor("hudson.plugins.emailext.ExtendedEmailPublisher")
 
-Thread.start {
-    sleep 10000
-
         //Jenkins Location
         println "--> Configuring JenkinsLocation"
         jenkinsLocationConfiguration.setAdminAddress(SystemAdminMailAddress)
@@ -53,6 +50,5 @@ Thread.start {
     println 'Sending mail to ' + receivers + '.'
     Transport.send(message)
     println 'Mail sent.'
-} 
     
 	}
