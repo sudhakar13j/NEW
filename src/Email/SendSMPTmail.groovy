@@ -8,19 +8,10 @@ import javax.mail.internet.*
 
 def sendMail(receivers, subject, text) {
 
-// Check if enabled
-def env = System.getenv()
-if (!env['ADOP_SMTP_ENABLED'].toBoolean()) {
-    println "--> SMTP configuration is disabled."
-    return
-}
-
 // Variables
-def SystemAdminMailAddress = env['admin@merge.com']
-def SMTPUser = env['SMTP_USER']
-def SMTPPassword = env['SMTP_PASSWORD']
-def SMTPPort = env['25']
-def SMTPHost = env['mail.products.network.internal']
+def SystemAdminMailAddress = 'admin@merge.com'
+def SMTPPort = 25
+def SMTPHost = 'mail.products.network.internal'
 
 // Constants
 def instance = Jenkins.getInstance()
