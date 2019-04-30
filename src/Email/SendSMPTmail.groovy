@@ -8,6 +8,7 @@ import javax.mail.internet.*
 
 def sendMail(receivers, subject, text) {
 
+println "-->SMTP mail configure"
 // Variables
 def SystemAdminMailAddress = 'admin@merge.com'
 def SMTPPort = 25
