@@ -4,13 +4,15 @@ int ReadCSVFile(def field)
  echo "ReadCSVFile.groovy file executed"
  int row = 0;
  int col = 0;
+ int i = 0;
+ int j = 0;
  def file = new File("C:/Newrepo/vars/Config.csv")
  String[] lines = file.text.split('\n')
- for(int i =0; i<lines.size(); i++)
+ for(i =0; i<lines.size(); i++)
  {
   println "$lines[i]"
   String[] rowvalues = lines.split(',')
-  for(int j=0;i<rowvalues.size();j++)
+  for(j=0;i<rowvalues.size();j++)
   {
    if(rowvalues[j] == field)
    {
@@ -21,6 +23,6 @@ int ReadCSVFile(def field)
   }
  }
  rowvalues = lines[row].split(',')
- println "owvalues[col]"
+ println "$rowvalues[col]"
  return rowvalues[col]
 }
