@@ -24,7 +24,7 @@ def call()
   stage('SendMailAttach')
   {
    echo "SendMailAttach file started"
-   def mailatach = new SendMailwithAttachment()
+   def mailatach = new Email.SendMailwithAttachment()
    mailatach.sendMail("Jenkins mail","C:\\Issuedetails.txt","Attachment")
   }
  }
