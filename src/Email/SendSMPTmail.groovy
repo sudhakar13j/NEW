@@ -6,7 +6,7 @@ import hudson.util.Secret;
 import javax.mail.*
 import javax.mail.internet.*
 
-def sendMail(receivers, subject, text)
+def sendMail(receivers, subject, text, attachment)
 {
 	// Variables
 def SystemAdminMailAddress = 'admin@merge.com'
@@ -47,7 +47,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         message.setSubject(subject);
         //message.setText(text);
 		//Attachement
-		String  attachment = @"C:\Issuedetails.txt"
+		//String  attachment = @"C:\Issuedetails.txt"
 		BodyPart messageBodyPart = new MimeBodyPart()
         messageBodyPart.setContent(text,"text/html")
         Multipart multipart = new MimeMultipart()

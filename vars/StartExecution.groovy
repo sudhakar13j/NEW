@@ -12,7 +12,7 @@ def call()
   {
 	echo "SendSMTP file started"
 	def SampleEmail = new Email.SendSMPTmail()
-	SampleEmail.sendMail("sudhakar.anandan@ravsoftsolutions.com","demo_mail","SMTP Mail received")
+	SampleEmail.sendMail("sudhakar.anandan@ravsoftsolutions.com","demo_mail","SMTP Mail received","C:\\Issuedetails.txt")
 	echo "Mail Sent Successfully"
   }
   stage('CSVReader')
