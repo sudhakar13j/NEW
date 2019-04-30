@@ -41,7 +41,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
     try{
         // Create a default MimeMessage object.
         MimeMessage msg = new MimeMessage(session)
-        msg.setFrom(new InternetAddress(eMailSendFrom))
+        msg.setFrom(new InternetAddress(SystemAdminMailAddress))
         eMailSendTo.split(',').each(){ item ->      msg.addRecipient(Message.RecipientType.TO,
             new InternetAddress(receivers)    )
         }
