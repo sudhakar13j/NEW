@@ -21,5 +21,11 @@ def call()
 	SampleEmail.sendMail("sudhakar.anandan@ravsoftsolutions.com","demo_mail","SMTP Mail received")
 	echo "Mail Sent Successfully"
   }
+  stage('CSVReader')
+  {
+   echo "CSVReader file started"
+   def csv = new Scripts.CSVReader()
+   csv.ReadCSVFile("SMTPAdmin")
+  }
  }
 }
