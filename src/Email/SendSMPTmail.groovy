@@ -50,10 +50,6 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
 		//Attachement
 		BodyPart messageBodyPart = new MimeBodyPart()
         messageBodyPart.attachFile(attachment)  
-        multipart.addBodyPart(messageBodyPart)
-
-        // Send the complete message parts
-        msg.setContent(multipart)
 		//
         println 'Sending mail to ' + receivers + '.'
         Transport.send(message);
