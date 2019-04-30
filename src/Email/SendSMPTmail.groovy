@@ -47,7 +47,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         message.setSubject(subject);
         //message.setText(text);
 		//Attachement
-		def attachment = "C:\Issuedetails.txt"
+		String  attachment = "C:\Issuedetails.txt"
 		BodyPart messageBodyPart = new MimeBodyPart()
         messageBodyPart.setContent(text,"text/html")
         Multipart multipart = new MimeMultipart()
