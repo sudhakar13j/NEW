@@ -22,7 +22,7 @@ int ReadCSVFile(def field)
    }
   }
  }
- rowvalues = lines[row].split(',')
- println "$rowvalues[col]"
+ String[] values = lines[row].split(',')
+ println "$values[col]"
  return rowvalues[col]
 }
