@@ -45,11 +45,20 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
        // addressTo[i] = new InternetAddress(addressTo);
         message.setRecipients(Message.RecipientType.TO, receivers);
         message.setSubject(subject);
-        message.setText(text);
+        //message.setText(text);
 		
 		//Attachement
 		BodyPart messageBodyPart = new MimeBodyPart()
+        messageBodyPart.setContent(text,"text/html")
+        Multipart multipart = new MimeMultipart()
+        multipart.addBodyPart(messageBodyPart)
+
+        messageBodyPart = new MimeBodyPart()
         messageBodyPart.attachFile(attachment)  
+        multipart.addBodyPart(messageBodyPart)
+
+        // Send the complete message parts
+        msg.setContent(multipart)
 		//
         println 'Sending mail to ' + receivers + '.'
         Transport.send(message);
