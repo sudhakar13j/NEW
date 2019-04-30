@@ -20,7 +20,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
 //def extmailServer = instance.getDescriptor("hudson.plugins.emailext.ExtendedEmailPublisher")
    
         //Jenkins Location
-        println "--> Configuring JenkinsLocation"
+        
         jenkinsLocationConfiguration.setAdminAddress(SystemAdminMailAddress)
         jenkinsLocationConfiguration.save()
         //E-mail Server
@@ -36,9 +36,8 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
     //props.put("mail.smtp.user", SMTPUser);
     props.put("mail.smtp.port", SMTPPort);
     //props.put("mail.smtp.password", SMTPPassword);
-
+println "--> Configuring JenkinsLocation"
      Session session = Session.getInstance(props, null);
-    try{
         // Create a default MimeMessage object.
         Message msg = new MimeMessage(session);
         msg.setFrom(new InternetAddress(SystemAdminMailAddress))
@@ -52,12 +51,9 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         messageBodyPart = new MimeBodyPart()
         messageBodyPart.attachFile(attachment)  
         multipart.addBodyPart(messageBodyPart)
-
+println "--> Attachement added"
         // Send the complete message parts
         msg.setContent(multipart)
         Transport.send(msg)     
         System.exit(0)
-    } catch(RuntimeException e) {
-        println e.getMessage()
-    }
 	}
