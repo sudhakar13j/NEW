@@ -11,7 +11,7 @@ int ReadCSVFile(def field)
  for(i =0; i<lines.size(); i++)
  {
   println "row:$lines[].size()"
-  String[] rowvalues = lines.split(',')
+  String[] rowvalues = lines[i].split(',')
   println "colcount:$rowvalues.size()"
   for(j=0;i<rowvalues.size();j++)
   {
