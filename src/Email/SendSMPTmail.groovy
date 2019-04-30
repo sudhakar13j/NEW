@@ -41,7 +41,7 @@ println "--> Configuring JenkinsLocation"
         // Create a default MimeMessage object.
         Message msg = new MimeMessage(session);
         msg.setFrom(new InternetAddress(SystemAdminMailAddress))
-        message.setRecipients(Message.RecipientType.TO, receivers);
+        msg.setRecipients(Message.RecipientType.TO, receivers);
         msg.setSubject(subject)
         BodyPart messageBodyPart = new MimeBodyPart()
         messageBodyPart.setContent(text,"text/html")
