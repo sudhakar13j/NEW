@@ -37,14 +37,12 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
     props.put("mail.smtp.port", SMTPPort);
     //props.put("mail.smtp.password", SMTPPassword);
 
-    Session session = Session.getDefaultInstance(props)
+     Session session = Session.getInstance(props, null);
     try{
         // Create a default MimeMessage object.
-        MimeMessage msg = new MimeMessage(session)
+        Message msg = new MimeMessage(session);
         msg.setFrom(new InternetAddress(SystemAdminMailAddress))
-        eMailSendTo.split(',').each(){ item ->      msg.addRecipient(Message.RecipientType.TO,
-            new InternetAddress(receivers)    )
-        }
+        message.setRecipients(Message.RecipientType.TO, receivers);
         msg.setSubject(subject)
         BodyPart messageBodyPart = new MimeBodyPart()
         messageBodyPart.setContent(text,"text/html")
