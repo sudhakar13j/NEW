@@ -14,7 +14,7 @@ int ReadCSVFile(def field)
   String[] rowvalues = lines.split(',')
   for(j=0;i<rowvalues.size();j++)
   {
-   if(rowvalues[j] == field)
+   if(rowvalues[j].contains(field))
    {
     row = i+1;
 	col = j;
