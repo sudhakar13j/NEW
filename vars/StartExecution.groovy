@@ -8,12 +8,12 @@ def call()
    SampleObj.testgroovy()
    echo "Welcome to Jenkins"
   }
-  stage('SendEmail')
-  {
-   def SampleEmail = new Email.SendEmail()
-   SampleEmail.SendEmail("sudhakar.anandan@ravsoftsolutions.com","sudhakar.anandan@ravsoftsolutions.com","demo_mail","Execution started")
-   echo "Mail Sent Successfully"
-  }
+  //stage('SendEmail')
+  //{
+   //def SampleEmail = new Email.SendEmail()
+   //SampleEmail.SendEmail("sudhakar.anandan@ravsoftsolutions.com","sudhakar.anandan@ravsoftsolutions.com","demo_mail","Execution //started")
+   //echo "Mail Sent Successfully"
+  //}
   stage('SendSMTP')
   {
 	echo "SendSMTP file started"
