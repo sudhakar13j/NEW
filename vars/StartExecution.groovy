@@ -21,11 +21,5 @@ def call()
 	SampleEmail.sendMail("secure200.inmotionhosting.com","sudhakar.anandan@ravsoftsolutions.com","deepak.kumar@ravsoftsolutions.com","demo_mail")
 	echo "Mail Sent Successfully"
   }
-  stage('SendMailAttach')
-  {
-   echo "SendMailAttach file started"
-   def mailatach = new Email.SendMailwithAttachment()
-   mailatach.sendMail("Jenkins mail","C:\\Issuedetails.txt","Attachment")
-  }
  }
 }
