@@ -37,18 +37,16 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
     props.put("mail.smtp.port", SMTPPort);
     //props.put("mail.smtp.password", SMTPPassword);
 
-    Session session = Session.getInstance(props, null);
-   
-        Message message = new MimeMessage(session);
-        message.setFrom(new InternetAddress(SystemAdminMailAddress));
-        //InternetAddress addressTo = new InternetAddress[receivers];
-       // addressTo[i] = new InternetAddress(addressTo);
-        message.setRecipients(Message.RecipientType.TO, receivers);
-        message.setSubject(subject);
-        //message.setText(text);
-		
-		//Attachement
-		BodyPart messageBodyPart = new MimeBodyPart()
+    Session session = Session.getDefaultInstance(props)
+    try{
+        // Create a default MimeMessage object.
+        MimeMessage msg = new MimeMessage(session)
+        msg.setFrom(new InternetAddress(eMailSendFrom))
+        eMailSendTo.split(',').each(){ item ->      msg.addRecipient(Message.RecipientType.TO,
+            new InternetAddress(receivers)    )
+        }
+        msg.setSubject(subject)
+        BodyPart messageBodyPart = new MimeBodyPart()
         messageBodyPart.setContent(text,"text/html")
         Multipart multipart = new MimeMultipart()
         multipart.addBodyPart(messageBodyPart)
@@ -59,8 +57,9 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
 
         // Send the complete message parts
         msg.setContent(multipart)
-		//
-        println 'Sending mail to ' + receivers + '.'
-        Transport.send(message);
-        println 'Mail sent.'
+        Transport.send(msg)     
+        System.exit(0)
+    } catch(RuntimeException e) {
+        println e.getMessage()
+    }
 	}
