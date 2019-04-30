@@ -10,7 +10,7 @@ int ReadCSVFile(def field)
  String[] lines = file.text.split('\n')
  for(i =0; i<lines.size(); i++)
  {
-  println "$lines[i]"
+  println "Step1:$lines[i]"
   String[] rowvalues = lines.split(',')
   for(j=0;i<rowvalues.size();j++)
   {
@@ -23,6 +23,6 @@ int ReadCSVFile(def field)
   }
  }
  String[] values = lines[row].split(',')
- println "$values[col]"
+ println "Step2:$values[col]"
  return rowvalues[col]
-}
+} 
