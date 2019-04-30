@@ -3,7 +3,8 @@ import hudson.model.*;
 import jenkins.model.*;
 import hudson.tools.*;
 import hudson.util.Secret;
-
+import javax.mail.*
+import javax.mail.internet.*
 
 def sendMail(receivers, subject, text) {
 
