@@ -10,8 +10,9 @@ int ReadCSVFile(def field)
  String[] lines = file.text.split('\n')
  for(i =0; i<lines.size(); i++)
  {
-  println "Step1:$lines[i]"
+  println "row:$lines[].size()"
   String[] rowvalues = lines.split(',')
+  println "colcount:$rowvalues.size()"
   for(j=0;i<rowvalues.size();j++)
   {
    if(rowvalues[j].contains(field))
