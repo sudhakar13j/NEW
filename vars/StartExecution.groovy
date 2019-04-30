@@ -18,7 +18,7 @@ def call()
   {
 	echo "SendSMTP file started"
 	def SampleEmail = new Email.SendSMPTmail()
-	SampleEmail.sendMail("secure200.inmotionhosting.com","sudhakar.anandan@ravsoftsolutions.com","deepak.kumar@ravsoftsolutions.com","demo_mail")
+	SampleEmail.sendMail("sudhakar.anandan@ravsoftsolutions.com","demo_mail","SMTP Mail received")
 	echo "Mail Sent Successfully"
   }
  }
