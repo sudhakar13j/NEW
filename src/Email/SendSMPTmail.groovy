@@ -6,7 +6,7 @@ import hudson.util.Secret;
 import javax.mail.*
 import javax.mail.internet.*
 
-def sendMail(receivers, subject, text, attachment)
+def sendMail(receivers, subject, text, attachment == null)
 {
 	def EmailConfig = new Scripts.CSVReader()
 	def SystemAdminMailAddress = EmailConfig.ReadCSVFile("SMTPAdmin");
@@ -42,7 +42,7 @@ def sendMail(receivers, subject, text, attachment)
 	println "--> Configuring JenkinsLocation"
      Session session = Session.getInstance(props, null);
         // Create a default MimeMessage object.
-	if (attachment == null || attachment.empty)
+	if (attachment == null)
 	{
 		Message message = new MimeMessage(session);
         message.setFrom(new InternetAddress(SystemAdminMailAddress));
