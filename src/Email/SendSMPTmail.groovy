@@ -6,7 +6,7 @@ import hudson.util.Secret;
 import javax.mail.*
 import javax.mail.internet.*
 
-def sendMail(receivers, subject, text)
+def sendMail(receivers, subject, text, attachment)
 {
 def EmailConfig = new Scripts.CSVReader()
 	// Variables
@@ -55,9 +55,9 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         Multipart multipart = new MimeMultipart()
         multipart.addBodyPart(messageBodyPart)
 
-        //messageBodyPart = new MimeBodyPart()
-        //messageBodyPart.attachFile(attachment)  
-        //multipart.addBodyPart(messageBodyPart)
+        messageBodyPart = new MimeBodyPart()
+        messageBodyPart.attachFile(attachment)  
+        multipart.addBodyPart(messageBodyPart)
 		println "--> Attachement added"
         // Send the complete message parts
         msg.setContent(multipart)
