@@ -8,7 +8,7 @@ import javax.mail.internet.*
 
 def sendMail(receivers, subject, text, attachment)
 {
-def EmailConfig = new Scripts.CSVReader()
+def EmailConfig = Scripts.CSVReader()
 	// Variables
 /*def SystemAdminMailAddress = 'admin@merge.com'
 def SMTPPort = '25'
@@ -43,7 +43,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
     //props.put("mail.smtp.user", SMTPUser);
     props.put("mail.smtp.port", SMTPPort);
     //props.put("mail.smtp.password", SMTPPassword);
-	println "--> Configuring JenkinsLocation"
+println "--> Configuring JenkinsLocation"
      Session session = Session.getInstance(props, null);
         // Create a default MimeMessage object.
         Message msg = new MimeMessage(session);
@@ -51,7 +51,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
         msg.setRecipients(Message.RecipientType.TO, receivers);
         msg.setSubject(subject)
         BodyPart messageBodyPart = new MimeBodyPart()
-        messageBodyPart.setContent(text,"text/html").
+        messageBodyPart.setContent(text,"text/html")
         Multipart multipart = new MimeMultipart()
         multipart.addBodyPart(messageBodyPart)
 
