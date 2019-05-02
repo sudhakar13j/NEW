@@ -7,8 +7,10 @@ JServer,JUser,JPassword
 10.9.39.18:8080,Admin,Admin
 
 [EmailConfiguration]
-SMTPAdmin,SMTPReceiver,SMTPPort,SMTPHost
-admin@merge.com,sudhakar.anandan@ravsoftsolutions.com,25,mail.products.network.internal
+SMTPAdmin,SMTPPort,SMTPHost
+admin@merge.com,25,mail.products.network.internal
+SMTPReceiver
+sudhakar.anandan@ravsoftsolutions.com
 
 [VmSetup]
 Actions,VmName,Network,SnapshotName
