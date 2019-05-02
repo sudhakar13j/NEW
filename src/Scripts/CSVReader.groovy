@@ -6,16 +6,19 @@ int ReadCSVFile(def field)
  int col = 0;
  int i = 0;
  int j = 0;
+ int rowCount = 0;
+ int colCount = 0;
  def file = new File("C:/Newrepo/vars/Config.csv")
  String[] lines = file.text.split('\n')
- int cou = lines.size();
- println "Count:$cou"
+ int rowCount = lines.size();
+ println "RowCount:$rowCount"
  println "ttorow:$lines[]"
- for(i =0; i<lines.size(); i++)
+ for(i =0; i<rowCount; i++)
  {
   String[] rowvalues = lines[i].split(',')
-  println "colcount:$rowvalues.size()"
-  for(j=0;j<rowvalues.size();j++)
+  colCount = rowvalues.size();
+  println "ColCount:$colCount"
+  for(j=0;j<colCount;j++)
   {
    if(rowvalues[j].contains(field))
    {
