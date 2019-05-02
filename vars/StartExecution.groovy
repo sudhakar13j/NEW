@@ -17,7 +17,7 @@ def call()
 	def Subject = Configvalues.ReadCSVFile("EmailSubject")
 	def Body = Configvalues.ReadCSVFile("EmailBody")
 	def Attachment = Configvalues.ReadCSVFile("Attachment")
-	SampleEmail.sendMail(Receiver,Subject,Body)
+	SampleEmail.sendMail(Receiver,Subject,Body,Attachment)
 	echo "Mail Sent Successfully"
   }
   stage('CSVReader')
