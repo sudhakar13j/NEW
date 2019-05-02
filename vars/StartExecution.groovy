@@ -17,6 +17,10 @@ def call()
 	def Subject = Configvalues.ReadCSVFile("EmailSubject")
 	def Body = Configvalues.ReadCSVFile("EmailBody")
 	def Attachment = Configvalues.ReadCSVFile("Attachment")
+	println "$Receiver"
+	println "$Subject"
+	println "$Body"
+	println "$Attachment"
 	SampleEmail.sendMail(Receiver,Subject,Body,Attachment)
 	echo "Mail Sent Successfully"
   }
