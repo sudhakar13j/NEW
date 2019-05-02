@@ -51,7 +51,7 @@ println "--> Configuring JenkinsLocation"
         messageBodyPart = new MimeBodyPart()
         messageBodyPart.attachFile(attachment)  
         multipart.addBodyPart(messageBodyPart)
-println "--> Attachement added"
+		println "--> Attachement added"
         // Send the complete message parts
         msg.setContent(multipart)
         Transport.send(msg)     
