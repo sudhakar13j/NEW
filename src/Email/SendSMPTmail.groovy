@@ -8,7 +8,7 @@ import javax.mail.internet.*
 
 def sendMail(receivers, subject, text, attachment)
 {
-def EmailConfig = Scripts.CSVReader()
+def EmailConfig = new Scripts.CSVReader()
 	// Variables
 /*def SystemAdminMailAddress = 'admin@merge.com'
 def SMTPPort = '25'
