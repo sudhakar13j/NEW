@@ -10,7 +10,7 @@ int ReadCSVFile(def field)
  int colCount = 0;
  def file = new File("C:/Newrepo/vars/Config.csv")
  String[] lines = file.text.split('\n')
- int rowCount = lines.size();
+ rowCount = lines.size();
  println "RowCount:$rowCount"
  println "ttorow:$lines[]"
  for(i =0; i<rowCount; i++)
