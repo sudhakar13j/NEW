@@ -2,12 +2,12 @@ def call()
 {
  node
  {
-  stage('Sample')
+  /*stage('Sample')
   {
    def SampleObj = new Scripts.test()
    SampleObj.testgroovy()
    echo "Welcome to Jenkins"
-  }
+  }*/
   /*stage('SendSMTP')
   {
 	echo "SendSMTP file started"

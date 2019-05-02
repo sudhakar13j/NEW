@@ -2,12 +2,13 @@ package Scripts
 int ReadCSVFile(def field)
 {
  echo "ReadCSVFile.groovy file executed"
- int row = 0;
- int col = 0;
- int i = 0;
- int j = 0;
- int rowCount = 0;
- int colCount = 0;
+ int row = 0
+ int col = 0
+ int i = 0
+ int j = 0
+ int rowCount = 0
+ int colCount = 0
+ Strig temp = null
  def file = new File("C:/Newrepo/vars/Config.csv")
  String[] lines = file.text.split('\n')
  rowCount = lines.size();
@@ -22,14 +23,15 @@ int ReadCSVFile(def field)
   {
    if(rowvalues[j].contains(field))
    {
-    row = i+1;
-	col = j;
+    row = i+1
+	col = j
 	break;
    }
   }
  }
  println("Found place:$row and $col")
  String[] values = lines[row].split(',')
- println "Step2:$values[col]"
- return rowvalues[col]
+ String csvvalue = values[col]
+ println "CSSV:$csvvalue"
+ return values[col]
 }
