@@ -10,7 +10,7 @@ JServer,JUser,JPassword
 SMTPAdmin,SMTPPort,SMTPHost,SMTPReceiver
 admin@merge.com,25,mail.products.network.internal,sudhakar.anandan@ravsoftsolutions.com
 EmailSubject,EmailBody,Attachment
-Demo_Mail,SMTP Mail Received,C:/Newrepo/vars/Config.csv
+Demo_Mail,SMTP Mail Received,C:\Newrepo\vars\attachment.txt
 
 [VmSetup]
 Actions,VmName,Network,SnapshotName
