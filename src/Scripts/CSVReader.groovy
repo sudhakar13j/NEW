@@ -28,6 +28,7 @@ int ReadCSVFile(def field)
    }
   }
  }
+ println("Found place:$row and $col")
  String[] values = lines[row].split(',')
  println "Step2:$values[col]"
  return rowvalues[col]
