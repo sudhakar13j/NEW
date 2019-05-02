@@ -19,9 +19,9 @@ def call()
   {
    echo "CSVReader file started"
    def csv = new Scripts.CSVReader()
-   def input1 = csv.ReadCSVFile("ServerExecutionFile")
+   def input1 = csv.ReadCSVFile("SMTPReceiver")
    println "Input1:$input1"
-   def input2 = csv.ReadCSVFile("BuildUrl")
+   def input2 = csv.ReadCSVFile("JServer")
    println "Input2:$input1"
   }
  }
