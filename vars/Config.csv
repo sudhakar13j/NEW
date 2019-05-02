@@ -1,6 +1,6 @@
 [ServerDetails]
 JServer,JUser,JPassword
 10.9.39.18:8080,Admin,Admin
-[Email]
+[EmailConfiguration]
 SMTPAdmin,SMTPReceiver,SMTPPort,SMTPHost
 admin@merge.com,sudhakar.anandan@ravsoftsolutions.com,25,mail.products.network.internal

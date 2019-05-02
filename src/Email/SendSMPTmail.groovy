@@ -8,10 +8,17 @@ import javax.mail.internet.*
 
 def sendMail(receivers, subject, text, attachment)
 {
+def EmailConfig = Scripts.CSVReader()
 	// Variables
-def SystemAdminMailAddress = 'admin@merge.com'
+/*def SystemAdminMailAddress = 'admin@merge.com'
 def SMTPPort = '25'
-def SMTPHost = 'mail.products.network.internal'
+def SMTPHost = 'mail.products.network.internal'*/
+def SystemAdminMailAddress = EmailConfig.ReadCSVFile("SMTPAdmin");
+def SMTPPort = EmailConfig.ReadCSVFile("SMTPPort");
+def SMTPHost = EmailConfig.ReadCSVFile("SMTPHost");
+println "SystemAdminMailAddress: $SystemAdminMailAddress"
+println "SMTPPort: $SMTPPort"
+println "SMTPHost: $SMTPHost"
 
 // Constants
 def instance = Jenkins.getInstance()
