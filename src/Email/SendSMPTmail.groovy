@@ -6,7 +6,7 @@ import hudson.util.Secret;
 import javax.mail.*
 import javax.mail.internet.*
 
-def sendMail(receivers, subject, text, attachment)
+def sendMail(receivers, subject, text, String attachment = null)
 {
 	def EmailConfig = new Scripts.CSVReader()
 	def SystemAdminMailAddress = EmailConfig.ReadCSVFile("SMTPAdmin");
