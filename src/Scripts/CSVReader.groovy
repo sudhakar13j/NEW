@@ -8,12 +8,12 @@ int ReadCSVFile(def field)
  int j = 0;
  def file = new File("C:/Newrepo/vars/Config.csv")
  String[] lines = file.text.split('\n')
- for(i =0; i<lines.size(); i++)
+ for(i =0; i<lines.length(); i++)
  {
-  println "row:$lines[].size()"
+  println "row:$lines[].length()"
   String[] rowvalues = lines[i].split(',')
-  println "colcount:$rowvalues.size()"
-  for(j=0;j<rowvalues.size();j++)
+  println "colcount:$rowvalues.length()"
+  for(j=0;j<rowvalues.length();j++)
   {
    if(rowvalues[j].contains(field))
    {
