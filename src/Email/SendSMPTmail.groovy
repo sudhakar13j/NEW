@@ -1,4 +1,5 @@
 package Email
+package Scripts
 import hudson.model.*;
 import jenkins.model.*;
 import hudson.tools.*;
