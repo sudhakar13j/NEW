@@ -6,7 +6,7 @@ import hudson.util.Secret;
 import javax.mail.*
 import javax.mail.internet.*
 
-def sendMail(receivers, subject, text, attachment)
+def sendMail(receivers, subject, text)
 {
 def EmailConfig = new Scripts.CSVReader()
 	// Variables
@@ -43,7 +43,7 @@ def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
     //props.put("mail.smtp.user", SMTPUser);
     props.put("mail.smtp.port", SMTPPort);
     //props.put("mail.smtp.password", SMTPPassword);
-println "--> Configuring JenkinsLocation"
+	println "--> Configuring JenkinsLocation"
      Session session = Session.getInstance(props, null);
         // Create a default MimeMessage object.
         Message msg = new MimeMessage(session);
@@ -51,13 +51,13 @@ println "--> Configuring JenkinsLocation"
         msg.setRecipients(Message.RecipientType.TO, receivers);
         msg.setSubject(subject)
         BodyPart messageBodyPart = new MimeBodyPart()
-        messageBodyPart.setContent(text,"text/html")
+        messageBodyPart.setContent(text,"text/html").
         Multipart multipart = new MimeMultipart()
         multipart.addBodyPart(messageBodyPart)
 
-        messageBodyPart = new MimeBodyPart()
-        messageBodyPart.attachFile(attachment)  
-        multipart.addBodyPart(messageBodyPart)
+        //messageBodyPart = new MimeBodyPart()
+        //messageBodyPart.attachFile(attachment)  
+        //multipart.addBodyPart(messageBodyPart)
 		println "--> Attachement added"
         // Send the complete message parts
         msg.setContent(multipart)
