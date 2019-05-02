@@ -19,7 +19,8 @@ def call()
   {
    echo "CSVReader file started"
    def csv = new Scripts.CSVReader()
-   csv.ReadCSVFile("SMTPAdmin")
+   def input = csv.ReadCSVFile("SMTPAdmin")
+   println "CSBInpuit:$input"
   }
  }
 }

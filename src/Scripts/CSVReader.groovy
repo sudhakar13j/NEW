@@ -32,5 +32,5 @@ int ReadCSVFile(def field)
  String[] values = lines[row].split(',')
  String csvvalue = values[col]
  println "CSSV:$csvvalue"
- return values[col]
+ return csvvalue
 }
