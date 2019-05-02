@@ -1,9 +1,6 @@
 
-ProjectName,BuildOutputlocation,ServerExecutionFile
-Pacs,C:\PACS_build\8_1_0,C:\imgdrv\Supdate.pl
-
-BuildUrl,
-http://10.4.16.25:8080/job/CURRENT_FULL/lastSuccessfulBuild/artifact/server/cds/IBM%20Merge%20PACS%20Server%20Software%20CD/*zip*/IBM%20Merge%20PACS%20Server%20Software%20CD.zip
+ProjectName,BuildOutputlocation,ServerExecutionFile,BuildUrl
+Pacs,C:\PACS_build\8_1_0,C:\imgdrv\Supdate.pl,http://10.4.16.25:8080/job/CURRENT_FULL/lastSuccessfulBuild/artifact/server/cds/IBM%20Merge%20PACS%20Server%20Software%20CD/*zip*/IBM%20Merge%20PACS%20Server%20Software%20CD.zip
 
 [VmSetup]
 Actions,VmName,Network,SnapshotName
