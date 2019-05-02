@@ -21,7 +21,7 @@ def call()
    def csv = new Scripts.CSVReader()
    def input1 = csv.ReadCSVFile("SMTPReceiver")
    println "Input1:$input1"
-   def input2 = csv.ReadCSVFile("JServer")
+   def input2 = csv.ReadCSVFile("BuildUrl")
    println "Input2:$input2"
   }
  }
