@@ -19,7 +19,7 @@ int ReadCSVFile(def field)
  
   for(j=0;j<colCount;j++)
   {
-   if(rowvalues[j].contains(field))
+   if(rowvalues[j].equals(field))
    {
     row = i+1
 	col = j

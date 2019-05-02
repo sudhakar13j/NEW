@@ -22,7 +22,7 @@ def call()
    def input1 = csv.ReadCSVFile("SMTPReceiver")
    println "Input1:$input1"
    def input2 = csv.ReadCSVFile("JServer")
-   println "Input2:$input1"
+   println "Input2:$input2"
   }
  }
 }
