@@ -8,13 +8,18 @@ def call()
    SampleObj.testgroovy()
    echo "Welcome to Jenkins"
   }*/
-  /*stage('SendSMTP')
+  stage('SendSMTP')
   {
 	echo "SendSMTP file started"
 	def SampleEmail = new Email.SendSMPTmail()
-	SampleEmail.sendMail("sudhakar.anandan@ravsoftsolutions.com","demo_mail","SMTP Mail received","C:\\Issuedetails.txt")
+	def Configvalues = new Scripts.CSVReader()
+	def Receiver = Configvalues.ReadCSVFile("SMTPReceiver")
+	def Subject = Configvalues.ReadCSVFile("EmailSubject")
+	def Body = Configvalues.ReadCSVFile("EmailBody")
+	def Attachment = Configvalues.ReadCSVFile("Attachment")
+	SampleEmail.sendMail(Receiver,Subject,Body,Attachment)
 	echo "Mail Sent Successfully"
-  }*/
+  }
   stage('CSVReader')
   {
    echo "CSVReader file started"
