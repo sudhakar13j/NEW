@@ -8,6 +8,8 @@ int ReadCSVFile(def field)
  int j = 0;
  def file = new File("C:/Newrepo/vars/Config.csv")
  String[] lines = file.text.split('\n')
+ int cou = lines.size();
+ println "Count:$cou"
  println "ttorow:$lines[]"
  for(i =0; i<lines.size(); i++)
  {
