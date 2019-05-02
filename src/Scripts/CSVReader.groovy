@@ -8,7 +8,6 @@ int ReadCSVFile(def field)
  int j = 0
  int rowCount = 0
  int colCount = 0
- Strig temp = null
  def file = new File("C:/Newrepo/vars/Config.csv")
  String[] lines = file.text.split('\n')
  rowCount = lines.size();
