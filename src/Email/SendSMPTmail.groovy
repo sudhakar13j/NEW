@@ -55,5 +55,4 @@ println "--> Attachement added"
         // Send the complete message parts
         msg.setContent(multipart)
         Transport.send(msg)     
-        System.exit(0)
 	}
