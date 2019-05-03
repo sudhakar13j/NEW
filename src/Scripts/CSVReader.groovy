@@ -1,9 +1,10 @@
 package Scripts
-int ReadCSVFile(def field)
+int ReadCSVFile(def header,def field)
 {
  echo "ReadCSVFile.groovy file executed"
  int row = 0
  int col = 0
+ int x = 0
  int i = 0
  int j = 0
  int rowCount = 0
@@ -11,19 +12,23 @@ int ReadCSVFile(def field)
  def file = new File("C:/Newrepo/vars/Config.csv")
  String[] lines = file.text.split('\n')
  rowCount = lines.size();
-
- for(i =0; i<rowCount; i++)
+ for(x=0;x<rowCount;x++)
  {
-  String[] rowvalues = lines[i].split(',')
-  colCount = rowvalues.size();
- 
-  for(j=0;j<colCount;j++)
+  if(lines[i].equals(header))
   {
-   if(rowvalues[j].equals(field))
+   for(i=x; i<rowCount; i++)
    {
-    row = i+1
-	col = j
-	break;
+    String[] rowvalues = lines[i].split(',')
+    colCount = rowvalues.size();
+	for(j=0;j<colCount;j++)
+	{
+	 if(rowvalues[j].equals(field))
+	 {
+	  row = i+1
+	  col = j
+	  break;
+	 }
+	}
    }
   }
  }
