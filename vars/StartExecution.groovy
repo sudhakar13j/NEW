@@ -2,7 +2,7 @@ def call()
 {
  node
  {
-  stage('Sample')
+  /*stage('Sample')
   {
    def SampleObj = new Scripts.test()
    SampleObj.testgroovy()
@@ -32,7 +32,7 @@ def call()
    println "Input1:$input1"
    def input2 = csv.ReadCSVFile("BuildUrl")
    println "Input2:$input2"
-  }
+  }*/
   stage('CSVFileReader')
   {
    echo "CSVReader file started"
