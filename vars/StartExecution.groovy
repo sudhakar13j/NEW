@@ -33,5 +33,14 @@ def call()
    def input2 = csv.ReadCSVFile("BuildUrl")
    println "Input2:$input2"
   }
+  stage('CSVFileReader')
+  {
+   echo "CSVReader file started"
+   def csv = new Scripts.CSVFileReader()
+   def input1 = csv.ReadCSVFile("EmailConfiguration")
+   println "Input1:$input1"
+   def input2 = csv.ReadCSVFile("ServerSetup")
+   println "Input2:$input2"
+  }
  }
 }
