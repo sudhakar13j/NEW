@@ -14,10 +14,11 @@ int ReadCSVFile(def header,def field)
  rowCount = lines.size();
  for(x=0;x<rowCount;x++)
  {
-  if(lines[i].contains(header))
+  if(lines[i].Contains(header))
   {
    for(i=x; i<rowCount; i++)
    {
+    println "header:$x"
     String[] rowvalues = lines[i].split(',')
     colCount = rowvalues.size();
 	for(j=0;j<colCount;j++)
