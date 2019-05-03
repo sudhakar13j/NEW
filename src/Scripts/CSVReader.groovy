@@ -14,7 +14,7 @@ int ReadCSVFile(def header,def field)
  rowCount = lines.size();
  for(x=0;x<rowCount;x++)
  {
-  if(lines[i].Contains(header))
+  if(lines[i].contains(header))
   {
    for(i=x; i<rowCount; i++)
    {
