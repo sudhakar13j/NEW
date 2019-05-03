@@ -67,9 +67,10 @@ def sendMail(receivers, subject, text, String attachment = null)
 	messageBodyPart = new MimeBodyPart()
 	messageBodyPart.attachFile(attachment)  
 	multipart.addBodyPart(messageBodyPart)
-	println "--> Attachement added"
 	// Send the complete message parts
 	msg.setContent(multipart)
+	println 'Sending mail to ' + receivers + '.'
 	Transport.send(msg)   
+	println "--> Mail sent with Attachment"
 	}
 }
