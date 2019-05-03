@@ -40,9 +40,6 @@ def call()
    List input1 = new ArrayList()
    List input2 = new ArrayList()
    input1 = csv.ReadCSVFile("EmailConfiguration")
-   String[] lines = input1.split(',')
-   String ss = lines[2]
-   println "SS:$ss"
    println "Input1:$input1"
    input2 = csv.ReadCSVFile("ServerSetup")
    println "Input2:$input2"
