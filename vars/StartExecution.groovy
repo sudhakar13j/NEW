@@ -28,9 +28,9 @@ def call()
   {
    echo "CSVReader file started"
    def csv = new Scripts.CSVReader()
-   def input1 = csv.ReadCSVFile("[EmailConfiguration]","SMTPPort")
+   def input1 = csv.ReadCSVFile("SMTPPort")
    println "Input1:$input1"
-   def input2 = csv.ReadCSVFile("[EmailConfiguration]","Attachment")
+   def input2 = csv.ReadCSVFile("Attachment")
    println "Input2:$input2"
   }
  }
