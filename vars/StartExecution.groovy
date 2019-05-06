@@ -39,7 +39,7 @@ def call()
    def csv = new Scripts.CSVFileReader()
    List input1 = new ArrayList()
    List input2 = new ArrayList()
-   input1 = csv.ReadCSVFile("EmailConfiguration")
+   input1 = csv.ReadCSVFile("ServerSetup")
    println "Input1:$input1"
    input2 = csv.ReadCSVFile("ServerSetup")
    println "Input2:$input2"
