@@ -38,10 +38,10 @@ def call()
    echo "CSVReader file started"
    def csv = new Scripts.CSVFileReader()
    List input1 = new ArrayList()
-   List input2 = new ArrayList()
+   //List input2 = new ArrayList()
    input1 = csv.ReadCSVFile("VmSetup")
    println "Input1:$input1"
-   input2 = csv.ReadCSVFile("ServerSetup")
+   String[] input2 = csv.ReadCSVFile("EmailConfiguration","Email")
    println "Input2:$input2"
   }
  }
