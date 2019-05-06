@@ -63,7 +63,8 @@ List ReadCSVFile(String header)
 		lines[row] = lines[row].replace('}', '')
 		lines[row] = lines[row].replace(' ', '')
 		String[] value = lines[row].split(',')
-		List ArrayLi = new ArrayList()
+		//List ArrayLi = new ArrayList()
+		def ArrayLi = []
 		int n = value.size()
 		for(j=0;j<n;j++)
 		{
