@@ -36,14 +36,15 @@ def call()
   stage('CSVFileReader')
   {
    echo "CSVReader file started"
-   def csv = new Scripts.CSVFileReader()
-   //List input1 = new ArrayList()
-   //List input2 = new ArrayList()
-   //def input1 = csv.ReadCSVFile("VmSetup")
-   //println "Input1:$input1.get(0)"
-   def input2 = []
-   input2 = csv.ReadCSVFile("EmailConfiguration","Email")
-   println "Input2:$input2.get(2)"
+   CSVReader c = new CSVReader()
+		List li = new ArrayList()
+		li = c.ReadCSVFile("VmSetup")
+		int n = li.size()
+		String sss = li.get(0)
+		println "List count:$sss"
+		List arr = c.ReadCSVFile("EmailConfiguration","Email")
+		sss = arr.get(2)
+		println "Output:$sss"
   }
  }
 }

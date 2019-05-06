@@ -26,7 +26,7 @@ List ReadCSVFile(String header)
 			if(lines[j].contains("@Stage") || lines[j] == "<EOF>" || lines[j] == '\r')
 				break
 			else
-				Arrayvalues.add(lines[j])
+				Arrayvalues.add(lines[j].toString())
 		}
 		int n = Arrayvalues.size()
 		for(k=0;k<n;k++)
@@ -63,12 +63,11 @@ List ReadCSVFile(String header)
 		lines[row] = lines[row].replace('}', '')
 		lines[row] = lines[row].replace(' ', '')
 		String[] value = lines[row].split(',')
-		//List ArrayLi = new ArrayList()
-		def ArrayLi = []
+		List ArrayLi = new ArrayList()
 		int n = value.size()
 		for(j=0;j<n;j++)
 		{
-			ArrayLi.add(value[j])
+			ArrayLi.add(value[j].toString())
 		}
 		return ArrayLi
 	}
