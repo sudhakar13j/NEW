@@ -40,9 +40,9 @@ def call()
    List input1 = new ArrayList()
    List input2 = new ArrayList()
    input1 = csv.ReadCSVFile("VmSetup")
-   println "Input1:$input1[0]"
+   println "Input1:$input1.get(0)"
    input2 = csv.ReadCSVFile("EmailConfiguration","Email")
-   println "Input2:$input2[2]"
+   println "Input2:$input2.get(2)"
   }
  }
 }
