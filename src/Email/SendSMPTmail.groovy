@@ -88,7 +88,8 @@ def sendMailNew(receivers, subject, text, String attachment = null)
 	input = EmailConfig.ReadCSVFile("SendEmail","SMTPConfiguration");
 	def SystemAdminMailAddress = input[0]
 	def SMTPPort = input[1]
-	def SMTPHost = input[2]
+	//def SMTPHost = input[2]
+	def SMTPHost = "mail.products.network.internal"
 	println "SystemAdminMailAddress: $SystemAdminMailAddress"
 	println "SMTPPort: $SMTPPort"
 	println "SMTPHost: $SMTPHost"
