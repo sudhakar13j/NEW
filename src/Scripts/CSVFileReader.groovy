@@ -71,3 +71,8 @@ List ReadCSVFile(String header)
 		}
 		return ArrayLi
 	}
+	void test1(int a,int b)
+	{
+		int c = a+b
+		println "Sum:$c"
+	}

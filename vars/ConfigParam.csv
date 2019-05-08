@@ -2,12 +2,12 @@
 #Actions,VmName,Paramter
 {VmPowerOff-VmRevert-VmPowerOn},pa-tst4-ws16,{NEPTUNE|BaseImage}
 {VmRevert-VmPowerOn},pa-tst5-ws16,{NEPTUNE | BaseImage}
-{VmPowerOn},pa-tst4-ws16,{NEPTUNE,BaseImage}
+{VmPowerOn},pa-tst4-ws16,{NEPTUNE|BaseImage}
 
 [@Stage-ServerSetup]
 #Actions,VmName,parameter
 {BuildDownload-Exec_ServerInstall},pa-tst4-ws16
-{BuildDownload-Exec_ServerInstall},pa-tst5-ws16
+{BuildDownload},pa-tst5-ws16
 {BuildDownload-Exec_ServerInstall},pa-tst6-ws16
 
 [@Stage-ClientSetup]
@@ -16,12 +16,17 @@
 {SVNCheckout},pa-tst5-ws16
 
 [@Stage-EmailConfiguration]
-#Actions,VmName,Parameter(SMTPAdmin,SMTPPort,SMTPHost,SMTPReceiver,EmailSubject,EmailBody,Attachment)
-{sendemail-attachment},Master,{admin@merge.com|25|mail.products.network.internal|sudhakar.anandan@ravsoftsolutions.com|Demo_Mail|SMTP Mail Received|C:\Newrepo\vars\attachment.txt}
+#Actions,VmName,Parameter(SMTPAdmin,SMTPPort,SMTPHost)
+{SMTPConfiguration},Master,{admin@merge.com|25|mail.products.network.internal}
+
+[@Stage-SendEmail]
+#Actions,VmName,Parameter(Receiver,Subject,Body,Attachment)
+{SMTPConfiguration},Master,{admin@merge.com|25|mail.products.network.internal}
+{SendEmail},Master,{sudhakar.anandan@ravsoftsolutions.com|Demo_Mail|SMTP Mail Received|C:\Newrepo\vars\attachment.txt}
 
 [@Stage-CDOC]
 #Actions,VmName,parameter
- {FPS|QAC},Master,{QS-39670_Functional_Product_Specifications_Excel_Template_Clinical_Review.xlsx | QS-39677_Traceability_Matrix_Template.xls=CDoc_QACSpec.pl;Clinical_Review_3.0_Interval_1_and_2_.csv;CDoc_QACSpec_Template.xls}
+{FPS|QAC},Master,{QS-39670_Functional_Product_Specifications_Excel_Template_Clinical_Review.xlsx | QS-39677_Traceability_Matrix_Template.xls=CDoc_QACSpec.pl;Clinical_Review_3.0_Interval_1_and_2_.csv;CDoc_QACSpec_Template.xls}
 
 [@Stage-GeneralDetails]
 #Actions,VmName,Parameter(BuildOutputlocation,ServerExecutionFile,BuildUrl)

@@ -46,5 +46,18 @@ def call()
    sss = input2.get(2)
    println "Input2:$sss"
   }
+  stage('test')
+  {
+  echo "test stage started"
+   CSVReader csv = new CSVReader()
+   csv.metaClass.methods.each { method ->
+			if (method.name == 'test1') {
+				method.invoke(csv, 10,20)
+			}
+			if (method.name == 'ReadCSVFile') {
+				method.invoke(csv, "EmailConfiguration")
+			}
+		}
+  }
  }
 }
