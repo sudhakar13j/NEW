@@ -21,7 +21,8 @@ def call()
 	println "$Subject"
 	println "$Body"
 	println "$Attachment"
-	SampleEmail.sendMail(Receiver,Subject,Body,Attachment)
+	//SampleEmail.sendMail(Receiver,Subject,Body,Attachment)
+	SampleEmail.sendMailNew(Receiver,Subject,Body,Attachmen)
 	echo "Mail Sent Successfully"
   }
   /*stage('CSVReader')
