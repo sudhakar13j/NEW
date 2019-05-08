@@ -95,6 +95,7 @@ List ReadCSVFile(String header)
 			Arrayval.add(line[i].toString())
 		}
 		return Arrayval
+		println "Arrayvaluesmethiod:$Arrayval"
 	}
 	void test1(int a,int b, String VmName, String Network)
 	{
