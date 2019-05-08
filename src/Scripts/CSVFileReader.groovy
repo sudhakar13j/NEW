@@ -71,7 +71,7 @@ List ReadCSVFile(String header)
 		}
 		return ArrayLi
 	}*/
-	void test1(int a,int b)
+	void test1(int a,int b, String VmName, String Network)
 	{
 		int c = a+b
 		println "Sum:$c"
