@@ -2,7 +2,7 @@ def call()
 {
  node
  {
-  stage('Sample')
+  /*stage('Sample')
   {
    def SampleObj = new Scripts.test()
    SampleObj.testgroovy()
@@ -32,8 +32,8 @@ def call()
    println "Input1:$input1"
    def input2 = csv.ReadCSVFile("BuildUrl")
    println "Input2:$input2"
-  }
-  /*stage('CSVFileReader')
+  }*/
+  stage('CSVFileReader')
   {
    echo "CSVReader file started"
    def csv = new Scripts.CSVFileReader()
@@ -50,14 +50,16 @@ def call()
   {
   echo "test stage started"
    def csv = new Scripts.CSVFileReader()
-   csv.metaClass.methods.each { method ->
+   methodname = "ReadCSVFile"
+		csv."$methodname"("EmailConfiguration")
+   /*csv.metaClass.methods.each { method ->
 			if (method.name == 'test1') {
 				method.invoke(csv, 10,20)
 			}
 			if (method.name == 'ReadCSVFile') {
 				method.invoke(csv, 'EmailConfiguration')
 			}
-		}
-  }*/
+		}*/
+  }
  }
 }
