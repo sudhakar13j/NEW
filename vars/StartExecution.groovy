@@ -55,7 +55,7 @@ def call()
 				method.invoke(csv, 10,20)
 			}
 			if (method.name == 'ReadCSVFile') {
-				method.invoke(csv, "EmailConfiguration")
+				method.invoke(csv, 'EmailConfiguration')
 			}
 		}
   }
