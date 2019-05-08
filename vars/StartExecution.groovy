@@ -49,7 +49,7 @@ def call()
   stage('test')
   {
   echo "test stage started"
-   CSVReader csv = new Scripts.CSVFileReader()
+   def csv = new Scripts.CSVFileReader()
    csv.metaClass.methods.each { method ->
 			if (method.name == 'test1') {
 				method.invoke(csv, 10,20)
