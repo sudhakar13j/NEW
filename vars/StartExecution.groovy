@@ -24,7 +24,7 @@ def call()
 	SampleEmail.sendMail(Receiver,Subject,Body,Attachment)
 	echo "Mail Sent Successfully"
   }
-  stage('CSVReader')
+  /*stage('CSVReader')
   {
    echo "CSVReader file started"
    def csv = new Scripts.CSVReader()
@@ -32,7 +32,7 @@ def call()
    println "Input1:$input1"
    def input2 = csv.ReadCSVFile("BuildUrl")
    println "Input2:$input2"
-  }/*
+  }
   stage('CSVFileReader')
   {
    echo "CSVReader file started"
