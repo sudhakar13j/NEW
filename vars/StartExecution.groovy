@@ -32,7 +32,7 @@ def call()
    println "Input1:$input1"
    def input2 = csv.ReadCSVFile("BuildUrl")
    println "Input2:$input2"
-  }*/
+  }
   stage('CSVFileReader')
   {
    echo "CSVReader file started"
@@ -46,6 +46,7 @@ def call()
    sss = input2.get(2)
    println "Input2:$sss"
   }
+  */
   stage('test')
   {
   echo "test stage started"
