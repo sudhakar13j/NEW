@@ -1,6 +1,6 @@
 [@Stage-VmSetup]
-#Actions,VmName,Paramter
-{VmPowerOff-VmRevert-VmPowerOn},pa-tst4-ws16,{NEPTUNE|BaseImage}
+#Actions,node
+VmPowerOff(pa-tst4-ws16,Neptune)-VmRevert(pa-tst4-ws16,neptune,baseimage)-VmPowerOn(pa-tst4-ws16,neptune)
 {VmRevert-VmPowerOn},pa-tst5-ws16,{NEPTUNE | BaseImage}
 {VmPowerOn},pa-tst4-ws16,{NEPTUNE|BaseImage}
 
@@ -12,17 +12,17 @@
 
 [@Stage-ClientSetup]
 #Actions,VmName,parameter
-{SVNCheckout-Exec_ClientScript},pa-tst4-ws16
-{SVNCheckout},pa-tst5-ws16
+{Exec_ClientScript()},pa-tst4-ws16
+{SVNCheckout()},pa-tst5-ws16
 
 [@Stage-EmailConfiguration]
 #Actions,VmName,Parameter(SMTPAdmin,SMTPPort,SMTPHost)
 {SMTPConfiguration},Master,{admin@merge.com|25|mail.products.network.internal}
 
 [@Stage-SendEmail]
-#Actions,VmName,Parameter(Receiver,Subject,Body,Attachment)
+#Actions,VmName,Parameter(SMTPAdmin,SMTPPort,SMTPHost,Receiver,Subject,Body,Attachment)
 {SMTPConfiguration},Master,{admin@merge.com|25|mail.products.network.internal}
-{SendEmail},Master,{sudhakar.anandan@ravsoftsolutions.com|Demo_Mail|SMTP Mail Received|C:\Newrepo\vars\attachment.txt}
+{sendMail},Master,{sudhakar.anandan@ravsoftsolutions.com|Demo_Mail|SMTP Mail Received|C:\Newrepo\vars\attachment.txt}
 
 [@Stage-CDOC]
 #Actions,VmName,parameter
