@@ -52,7 +52,7 @@ def call()
   echo "test stage started"
    def csv = new Scripts.CSVFileReader()
    String methodname = "test1"
-		csv."$methodname"(10,20,"pa-tst4-ws16","Neptune")
+		csv."$methodname"(10,20,"pa-tst4-ws16","NEPTUNE")
    /*csv.metaClass.methods.each { method ->
 			if (method.name == 'test1') {
 				method.invoke(csv, 10,20)
