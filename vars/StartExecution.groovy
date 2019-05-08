@@ -50,8 +50,8 @@ def call()
   {
   echo "test stage started"
    def csv = new Scripts.CSVFileReader()
-   methodname = "ReadCSVFile"
-		csv."$methodname"("EmailConfiguration")
+   String methodname = "test1"
+		csv."$methodname"(10,20)
    /*csv.metaClass.methods.each { method ->
 			if (method.name == 'test1') {
 				method.invoke(csv, 10,20)
