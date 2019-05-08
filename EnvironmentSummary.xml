@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='ReportTemplates/OverallReport.xsl'?>
+<XMLStorage>
+  <Project Name="ICA" Description="Merge ICA" />
+  <AutomationTools>
+    <AutomationTool>
+      <Name>Selenium</Name>
+      <Version>2.53</Version>
+    </AutomationTool>
+  </AutomationTools>
+  <Build Version="7.1.0.1894-26380" Date="3/21/2019 12:00:00 AM" />
+  <FailureReportDefaultLink>DetailedReport/FailureSummary-Default.xml</FailureReportDefaultLink>
+  <FailureReportCustumLink>DetailedReport/FailureSummary-Custom.xml</FailureReportCustumLink>
+  <Environments>
+    <Environment ID="1">
+      <ServerConfig ID="Microsoft Windows Server 2016 Standard">
+        <Servers>
+          <Server Name="ICA-3D" IP="10.4.36.159" />
+        </Servers>
+      </ServerConfig>
+      <ClientConfig ID="Microsoft Windows 7 (64-bit)">
+        <Clients>
+          <Client Name="ica-tst3-w7" IP="10.9.39.190" />
+        </Clients>
+      </ClientConfig>
+      <Browser Name="IE" Version="11.0.9600.19180" />
+      <TotalCases>190</TotalCases>
+      <TotalPassCases>184</TotalPassCases>
+      <TotalFailCases>6</TotalFailCases>
+      <TotalSkipCases>0</TotalSkipCases>
+      <TotalNotAutomatedCases>0</TotalNotAutomatedCases>
+      <Link>DetailedReport/TestSetSummary_72940.xml</Link>
+    </Environment>
+  </Environments>
+</XMLStorage>
