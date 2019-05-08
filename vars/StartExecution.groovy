@@ -51,9 +51,9 @@ def call()
   echo "test stage started"
    def csv = new Scripts.CSVFileReader()
    csv.metaClass.methods.each { method ->
-			/*if (method.name == 'test1') {
+			if (method.name == 'test1') {
 				method.invoke(csv, 10,20)
-			}*/
+			}
 			if (method.name == 'ReadCSVFile') {
 				method.invoke(csv, "EmailConfiguration")
 			}
