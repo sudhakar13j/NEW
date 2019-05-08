@@ -37,10 +37,9 @@ List ReadCSVFile(String header)
 		}
 		return Arrayvalues
 	}
-	/*List ReadCSVFile(String header, String field)
+	List ReadCSVFile(String header, String field)
 	{
-		println "String ReadCSVFile.groovy file executed"
-		field = null//Declared that variable to use same method name with different return type
+		println "List ReadCSVFile.groovy file executed"
 		int row = 0
 		int col = 0
 		int i = 0
@@ -49,6 +48,7 @@ List ReadCSVFile(String header)
 		int rowCount = 0
 		int colCount = 0
 		def file = new File("C:/Newrepo/vars/ConfigParam.csv")
+		List Arrayvalues = new ArrayList()
 		String[] lines = file.text.split('\n')
 		rowCount = lines.size();
 		for(i =0; i<rowCount; i++)
@@ -59,18 +59,43 @@ List ReadCSVFile(String header)
 				break
 			}
 		}
-		lines[row] = lines[row].replace('{', '')
-		lines[row] = lines[row].replace('}', '')
-		lines[row] = lines[row].replace(' ', '')
-		String[] value = lines[row].split(',')
-		List ArrayLi = new ArrayList()
-		int n = value.size()
-		for(j=0;j<n;j++)
+		for(j=row;j<rowCount;j++)
 		{
-			ArrayLi.add(value[j].toString())
+			if(lines[j].contains("@Stage") || lines[j] == "<EOF>" || lines[j] == '\r')
+				break
+			else
+				Arrayvalues.add(lines[j].toString())
 		}
-		return ArrayLi
-	}*/
+		int n = Arrayvalues.size()
+		for(k=0;k<n;k++)
+		{
+			Arrayvalues[k] = Arrayvalues[k].replace('{', '')
+			Arrayvalues[k] = Arrayvalues[k].replace('}', '')
+			Arrayvalues[k] = Arrayvalues[k].replace(' ', '')
+		}
+		println "Output:$Arrayvalues"
+		String temp
+		for(j=0;j<Arrayvalues.size();j++)
+		{
+			if(Arrayvalues[j].contains(field))
+			{
+				temp = Arrayvalues[j]
+				break
+			}
+		}
+		String[] line = temp.split(',')
+		temp = null
+		temp = line[2].toString()
+		line = null
+		line = temp.split('\\|')
+		println "Line:$line"
+		List Arrayval = new ArrayList()
+		for(i=0;i<line.size();i++)
+		{
+			Arrayval.add(line[i].toString())
+		}
+		return Arrayval
+	}
 	void test1(int a,int b, String VmName, String Network)
 	{
 		int c = a+b
