@@ -24,6 +24,13 @@ def call()
 	SampleEmail.sendMail(Receiver,Subject,Body,Attachment)
 	echo "Mail Sent Successfully"
   }
+  stage('Exec_ServerSetup')
+	{
+	def propertyFileLoc = "C:/Newrepo/vars/ConfigParam.csv"
+	def methodcall = new BuildLibrary.BuildOperation()
+	methodcall.BuildOperationCall(propertyFileLoc)
+	echo "Execution Server side setup Stage Completed"
+    }
   /*stage('CSVReader')
   {
    echo "CSVReader file started"
