@@ -12,8 +12,8 @@ VmPowerOff(pa-tst4-ws16,Neptune)-VmRevert(pa-tst4-ws16,neptune,baseimage)-VmPowe
 
 [@Stage-ClientSetup]
 #Actions,VmName,parameter
-{Exec_ClientScript()},pa-tst4-ws16
-{SVNCheckout()},pa-tst5-ws16
+{Exec_ClientScript()},ica-tst20-ws12
+{SVNCheckout()},ica-tst20-ws12
 
 [@Stage-EmailConfiguration]
 #Actions,VmName,Parameter(SMTPAdmin,SMTPPort,SMTPHost)
