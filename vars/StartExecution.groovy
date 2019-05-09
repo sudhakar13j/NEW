@@ -8,7 +8,7 @@ def call()
    SampleObj.testgroovy()
    echo "Welcome to Jenkins"
   }
-  stage('SendSMTP')
+  /*stage('SendSMTP')
   {
 	echo "SendSMTP file started"
 	def SampleEmail = new Email.SendSMPTmail()
@@ -23,9 +23,10 @@ def call()
 	println "$Attachment"
 	SampleEmail.sendMail(Receiver,Subject,Body,Attachment)
 	echo "Mail Sent Successfully"
-  }
+  }*/
   stage('Exec_ServerSetup')
 	{
+	echo "Execution Server side setup Stage started"
 	def propertyFileLoc = "C:/Newrepo/vars/ConfigParam.csv"
 	def methodcall = new BuildLibrary.BuildOperation()
 	methodcall.BuildOperationCall(propertyFileLoc)
