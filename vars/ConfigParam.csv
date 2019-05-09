@@ -6,9 +6,9 @@ VmPowerOff(pa-tst4-ws16,Neptune)-VmRevert(pa-tst4-ws16,neptune,baseimage)-VmPowe
 
 [@Stage-ServerSetup]
 #Actions,VmName,parameter
-{BuildDownload-Exec_ServerInstall},pa-tst4-ws16
-{BuildDownload},pa-tst5-ws16
-{BuildDownload-Exec_ServerInstall},pa-tst6-ws16
+{BuildDownload-Exec_ServerInstall},ica-tst20-ws12
+{BuildDownload},ica-tst20-ws12
+{BuildDownload-Exec_ServerInstall},ica-tst20-ws12
 
 [@Stage-ClientSetup]
 #Actions,VmName,parameter
