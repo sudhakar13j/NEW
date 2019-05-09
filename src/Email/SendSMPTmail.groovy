@@ -8,16 +8,11 @@ import javax.mail.internet.*
 
 def sendMail(receivers, subject, text, String attachment = null)
 {
-	//def EmailConfig = new Scripts.CSVFileReader()
 	def EmailConfig = new Scripts.CSVReader()
 	List input = new ArrayList()
-	//input = EmailConfig.ReadCSVFile("SendEmail","SMTPConfiguration");
 	def SystemAdminMailAddress = EmailConfig.ReadCSVFile("SMTPAdmin");
 	def SMTPPort = EmailConfig.ReadCSVFile("SMTPPort");
 	def SMTPHost = EmailConfig.ReadCSVFile("SMTPHost");
-	//def SystemAdminMailAddress = input[0]
-	//def SMTPPort = input[1]
-	//def SMTPHost = input[2]
 	println "SystemAdminMailAddress: $SystemAdminMailAddress"
 	println "SMTPPort: $SMTPPort"
 	println "SMTPHost: $SMTPHost"
