@@ -53,6 +53,7 @@ void FReader(String stage)
 				{
 					value.add(temp[i])
 				}
+				VmPowerOff(value)
 				//InputMap.put(key, value)
 				println "Key:$key"
 				println "Value:$value"
