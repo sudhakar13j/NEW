@@ -16,7 +16,7 @@ def call()
   }
   stage('poweroff')
   {
-   vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: 'pa-tst4-ws16'], serverName: 'NEPTUNE'
+   vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: 'ica-tst21-ws12'], serverName: 'NEPTUNE'
 	echo "${VmName} is Switched ON"
   }
  }
