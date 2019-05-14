@@ -56,6 +56,7 @@ void FReader(String stage)
 				//InputMap.put(key, value)
 				println "Key:$key"
 				println "Value:$value"
+				VmPowerOff(value)
 				//String val = InputMap[key]
 				//String methodname = key
 				obj.metaClass.methods.each { method ->
@@ -77,8 +78,7 @@ void VmPowerOff(List Parameter)
 	def Network = Parameter[1].toString()
 	println "Node:$Node"
 	println "Network:$Network"
-	//vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node], serverName: Network
-	vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: 'ica-tst21-ws12'], serverName: 'NEPTUNE'
+	vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node], serverName: Network
 }
 void VmRevert(List Parameter)
 {
