@@ -77,6 +77,7 @@ void VmPowerOff(List Parameter)
 	String Network = Parameter[1]
 	println "Node:$Node"
 	println "Network:$Network"
+	vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node], serverName: Network
 }
 void VmRevert(List Parameter)
 {
