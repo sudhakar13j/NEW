@@ -77,8 +77,8 @@ void VmPowerOff(List Parameter)
 	def Network = Parameter[1].toString()
 	println "Node:$Node"
 	println "Network:$Network"
-	vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node], serverName: Network
-	//vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: 'pa-tst4-ws16'], serverName: 'NEPTUNE'
+	//vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node], serverName: Network
+	vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: 'pa-tst4-ws16'], serverName: 'NEPTUNE'
 }
 void VmRevert(List Parameter)
 {
@@ -97,13 +97,14 @@ void VmPowerOn(List Parameter)
 	String Network = Parameter[1]
 	println "Node:$Node"
 	println "Network:$Network"
+	vSphere buildStep: [$class: 'PowerOn', timeoutInSeconds: 260, vm: Node], serverName: Network
 }
 void SMTPConfiguration(List Parameter)
 {
 	println "SMTPConfiguration method invoked"
 	String SMTPAdmin = Parameter[0]
 	String SMTPPort = Parameter[1]
-	String SMTPHost = Parameter[3]
+	String SMTPHost = Parameter[2]
 	println "SMTPAdmin:$SMTPAdmin"
 	println "SMTPPort:$SMTPPort"
 	println "SMTPHost:$SMTPHost"
