@@ -15,8 +15,8 @@ $SVNCheckout() - $ClientScript()
 
 [@Stage-SendEmail]
 #Actions,Parameter(SMTPAdmin,SMTPPort,SMTPHost,Receiver,Subject,Body,Attachment)
-$SMTPConfiguration,(admin@merge.com,25,mail.products.network.internal)
-$sendMail,(sudhakar.anandan@ravsoftsolutions.com,Demo_Mail,SMTP Mail Received,C:\Newrepo\vars\attachment.txt)
+$SMTPConfiguration(admin@merge.com,25,mail.products.network.internal)
+$sendMail(sudhakar.anandan@ravsoftsolutions.com,Demo_Mail,SMTP Mail Received,C:\Newrepo\vars\attachment.txt)
 
 [@Stage-CDOC]
 #Actions,VmName,parameter

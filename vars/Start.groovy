@@ -2,11 +2,17 @@ def call()
 {
  node
  {
-  stage('Sample')
+  stage('VmSetup')
   {
-   def SampleObj = new Scripts.Reusable()
-   SampleObj.FReader("VmSetup")
-   echo "Welcome to Jenkins"
+   def VmSetupObj = new Scripts.Reusable()
+   VmSetupObj.FReader("VmSetup")
+   echo "VmSetup Finished"
+  }
+  stage('SendEmail')
+  {
+   def EmailObj = new Scripts.Reusable()
+   EmailObj.FReader("SendEmail")
+   echo "SendEmail Finished"
   }
  }
 }
