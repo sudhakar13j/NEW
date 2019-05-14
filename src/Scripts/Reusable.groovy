@@ -73,48 +73,48 @@ void FReader(String stage)
 void VmPowerOff(List Parameter)
 {
 	println "VmPowerOff method invoked"
-	String input1 = Parameter[0]
-	String input2 = Parameter[1]
-	println "input1:$input1"
-	println "input2:$input2"
+	String Node = Parameter[0]
+	String Network = Parameter[1]
+	println "Node:$Node"
+	println "Network:$Network"
 }
 void VmRevert(List Parameter)
 {
 	println "VmRevert method invoked"
-	String input1 = Parameter[0]
-	String input2 = Parameter[1]
-	String input3 = Parameter[2]
-	println "input1:$input1"
-	println "input2:$input2"
-	println "input3:$input3"
+	String Node = Parameter[0]
+	String Network = Parameter[1]
+	String snapshot = Parameter[2]
+	println "Node:$Node"
+	println "Network:$Network"
+	println "snapshot:$snapshot"
 }
 void VmPowerOn(List Parameter)
 {
 	println "VmPowerOn method invoked"
-	String input1 = Parameter[0]
-	String input2 = Parameter[1]
-	println "input1:$input1"
-	println "input2:$input2"
+	String Node = Parameter[0]
+	String Network = Parameter[1]
+	println "Node:$Node"
+	println "Network:$Network"
 }
 void SMTPConfiguration(List Parameter)
 {
 	println "SMTPConfiguration method invoked"
-	String input1 = Parameter[0]
-	String input2 = Parameter[1]
-	String input3 = Parameter[3]
-	println "input1:$input1"
-	println "input2:$input2"
-	println "input3:$input3"
+	String SMTPAdmin = Parameter[0]
+	String SMTPPort = Parameter[1]
+	String SMTPHost = Parameter[3]
+	println "SMTPAdmin:$SMTPAdmin"
+	println "SMTPPort:$SMTPPort"
+	println "SMTPHost:$SMTPHost"
 }
 void sendMail(List Parameter)
 {
 	println "sendMail method invoked"
-	String input1 = Parameter[0]
-	String input2 = Parameter[1]
-	String input3 = Parameter[2]
-	String input4 = Parameter[3]
-	println "input1:$input1"
-	println "input2:$input2"
-	println "input3:$input3"
-	println "input4:$input4"
+	String Receiver = Parameter[0]
+	String Subject = Parameter[1]
+	String Body = Parameter[2]
+	String Attachment = Parameter[3]
+	println "Receiver:$Receiver"
+	println "Subject:$Subject"
+	println "Body:$Body"
+	println "Attachment:$Attachment"
 }
