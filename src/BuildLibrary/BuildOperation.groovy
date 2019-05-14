@@ -38,7 +38,6 @@ def BuildOperationCall(def propertyFileLoc)
 			 def deleteFile = BuildOutputLoc +"\\*.zip";
 			 //Copy and paste the content outside the Directory Delete the File and other unwanted Folder - Only for Pacs Project
 			 PACS_CopyAndDelete(CopyFromFolder,BuildOutputLoc,deleteFile)
-			 
 			}
 		  }
 		}

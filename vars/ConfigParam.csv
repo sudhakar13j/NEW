@@ -1,28 +1,22 @@
-[@Stage-VmSetup]
-#Actions,node
-VmPowerOff(pa-tst4-ws16,Neptune)-VmRevert(pa-tst4-ws16,neptune,baseimage)-VmPowerOn(pa-tst4-ws16,neptune)
-{VmRevert-VmPowerOn},pa-tst5-ws16,{NEPTUNE | BaseImage}
-{VmPowerOn},pa-tst4-ws16,{NEPTUNE|BaseImage}
+[@Stage-VmSetup] #Parameter(Node,Network,SnapshotName)
+#Actions,Parameter()
+$VmPowerOff(pa-tst4-ws16,Neptune) $VmRevert(pa-tst4-ws16,neptune) $VmPowerOn(pa-tst4-ws16,neptune)
+$VmPowerOff(pa-tst5-ws16,Neptune) $VmPowerOn(pa-tst5-ws16,neptune)
 
-[@Stage-ServerSetup]
-#Actions,VmName,parameter
-{BuildDownload-Exec_ServerInstall},ica-tst20-ws12
-{BuildDownload},ica-tst20-ws12
-{BuildDownload-Exec_ServerInstall},ica-tst20-ws12
+[@Stage-ServerSetup] #Parameter(BuildOutloc,BuildUrl,Node,ServerExecFile)
+$BuildDownload,(C:\PACS_build\8_1_0,http://10.4.16.25:8080/job/CURRENT_FULL/lastSuccessfulBuild/artifact/server/cds/IBM%20Merge%20PACS%20Server%20Software%20CD/*zip*/IBM%20Merge%20PACS%20Server%20Software%20CD.zip,pa-tst4-ws16) - $ServerInstall,(pa-tst4-ws16,C:\imgdrv\Supdate.pl)
+$ServerInstall,(pa-tst5-ws16,C:\imgdrv\Supdate.pl)
+$BuildDownload,(pa-tst6-ws16,C:\imgdrv\Supdate.pl)
 
-[@Stage-ClientSetup]
-#Actions,VmName,parameter
-{Exec_ClientScript()},ica-tst20-ws12
-{SVNCheckout()},ica-tst20-ws12
-
-[@Stage-EmailConfiguration]
-#Actions,VmName,Parameter(SMTPAdmin,SMTPPort,SMTPHost)
-{SMTPConfiguration},Master,{admin@merge.com|25|mail.products.network.internal}
+[@Stage-ClientSetup] #Parameter()
+#Actions,Parameter
+$SVNCheckout() - $ClientScript()
+$SVNCheckout() - $ClientScript()
 
 [@Stage-SendEmail]
-#Actions,VmName,Parameter(SMTPAdmin,SMTPPort,SMTPHost,Receiver,Subject,Body,Attachment)
-{SMTPConfiguration},Master,{admin@merge.com|25|mail.products.network.internal}
-{sendMail},Master,{sudhakar.anandan@ravsoftsolutions.com|Demo_Mail|SMTP Mail Received|C:\Newrepo\vars\attachment.txt}
+#Actions,Parameter(SMTPAdmin,SMTPPort,SMTPHost,Receiver,Subject,Body,Attachment)
+$SMTPConfiguration,(admin@merge.com,25,mail.products.network.internal)
+$sendMail,(sudhakar.anandan@ravsoftsolutions.com,Demo_Mail,SMTP Mail Received,C:\Newrepo\vars\attachment.txt)
 
 [@Stage-CDOC]
 #Actions,VmName,parameter
@@ -31,4 +25,5 @@ VmPowerOff(pa-tst4-ws16,Neptune)-VmRevert(pa-tst4-ws16,neptune,baseimage)-VmPowe
 [@Stage-GeneralDetails]
 #Actions,VmName,Parameter(BuildOutputlocation,ServerExecutionFile,BuildUrl)
 {Projectdetails},Master,{Pacs | C:\PACS_build\8_1_0,C:\imgdrv\Supdate.pl | http://10.4.16.25:8080/job/CURRENT_FULL/lastSuccessfulBuild/artifact/server/cds/IBM%20Merge%20PACS%20Server%20Software%20CD/*zip*/IBM%20Merge%20PACS%20Server%20Software%20CD.zip}
+
 
