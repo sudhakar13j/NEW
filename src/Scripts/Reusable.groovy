@@ -56,7 +56,7 @@ void FReader(String stage)
 				//InputMap.put(key, value)
 				println "Key:$key"
 				println "Value:$value"
-				VmPowerOff(value)
+				VmPowerOn(value)
 				//String val = InputMap[key]
 				//String methodname = key
 				obj.metaClass.methods.each { method ->
