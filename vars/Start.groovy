@@ -14,5 +14,10 @@ def call()
    EmailObj.FReader("SendEmail")
    echo "SendEmail Finished"
   }
+  stage('poweroff')
+  {
+   vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: 'pa-tst4-ws16'], serverName: 'NEPTUNE'
+	echo "${VmName} is Switched ON"
+  }
  }
 }
