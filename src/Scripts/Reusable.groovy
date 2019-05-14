@@ -73,11 +73,12 @@ void FReader(String stage)
 void VmPowerOff(List Parameter)
 {
 	println "VmPowerOff method invoked"
-	String Node = Parameter[0]
-	String Network = Parameter[1]
+	String Node = Parameter[0].toString()
+	String Network = Parameter[1].toString()
 	println "Node:$Node"
 	println "Network:$Network"
 	vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node], serverName: Network
+	//vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: 'pa-tst4-ws16'], serverName: 'NEPTUNE'
 }
 void VmRevert(List Parameter)
 {
