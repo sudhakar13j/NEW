@@ -23,7 +23,7 @@ println "text: $text"
 println "attachment: $attachment"
 EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, )
 }
-def EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, String attachment = 'C:\Newrepo\vars\attachment.txt')
+def EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, String attachment = @'C:\Newrepo\vars\attachment.txt')
 {
 	// Constants
 	def instance = Jenkins.getInstance()
