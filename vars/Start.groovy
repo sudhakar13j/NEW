@@ -2,12 +2,12 @@ def call()
 {
  node
  {
-  /*stage('VmSetup')
+  stage('VmSetup')
   {
    def VmSetupObj = new Scripts.ReadCSV()
    VmSetupObj.FReader("VmSetup")
    echo "VmSetup Finished"
-  }*/
+  }
   stage('SendEmail')
   {
    def EmailObj = new Scripts.ReadCSV()

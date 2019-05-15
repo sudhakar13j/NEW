@@ -21,7 +21,7 @@ println "receivers: $receivers"
 println "subject: $subject"
 println "text: $text"
 println "attachment: $attachment"
-EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, String attachment)
+EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text)
 }
 def EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, String attachment = null)
 {
