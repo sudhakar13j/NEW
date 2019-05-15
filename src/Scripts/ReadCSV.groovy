@@ -58,6 +58,11 @@ void FReader(String stage)
 				{
 					VmSetup objVM = new VmSetup()
 					objVM.VmOperations(key, value)
+				}
+				else if(stage.equals("SendEmail"))
+				{
+					SendEmail objEmail = new SendEmail()
+					objEmail.EmailOperation(key, value)
 				}				
 			}
 		}
