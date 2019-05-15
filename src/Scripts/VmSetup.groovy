@@ -17,7 +17,7 @@ void VmPowerOff(List Parameter)
 	def Network = Parameter[1].toString()
 	println "Node:$Node"
 	println "Network:$Network"
-	//vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node], serverName: Network
+	vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node], serverName: Network
 }
 void VmRevert(List Parameter)
 {
@@ -36,5 +36,5 @@ void VmPowerOn(List Parameter)
 	String Network = Parameter[1]
 	println "Node:$Node"
 	println "Network:$Network"
-	//vSphere buildStep: [$class: 'PowerOn', timeoutInSeconds: 260, vm: Node], serverName: Network
+	vSphere buildStep: [$class: 'PowerOn', timeoutInSeconds: 260, vm: Node], serverName: Network
 }
