@@ -21,9 +21,9 @@ println "receivers: $receivers"
 println "subject: $subject"
 println "text: $text"
 println "attachment: $attachment"
-EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, attachment)
+EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, )
 }
-def EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, String attachment = null)
+def EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, String attachment = 'C:\Newrepo\vars\attachment.txt')
 {
 	// Constants
 	def instance = Jenkins.getInstance()
