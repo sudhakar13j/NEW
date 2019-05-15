@@ -3,8 +3,6 @@ void FReader(String stage)
 	{
 		try
 		{
-			Reusable obj = new Reusable()
-			//StartProgram obj = new StartProgram()
 			println "File Reader Method started"
 			//Map<String,List> InputMap = new HashMap<String,List>();
 			String input1 = null
@@ -56,13 +54,11 @@ void FReader(String stage)
 				//InputMap.put(key, value)
 				println "Key:$key"
 				println "Value:$value"
-				//String val = InputMap[key]
-				//String methodname = key
-				obj.metaClass.methods.each { method ->
-					if (method.name == key) {
-						method.invoke(obj, value)
-					}
-				}
+				if(stage.equals("VmSetup"))
+				{
+					VmSetup objVM = new VmSetup()
+					objVM.VmOperations(key, value)
+				}				
 			}
 		}
 		catch(Exception ex)
@@ -70,7 +66,7 @@ void FReader(String stage)
 			println "Exception:$ex"
 		}
 	}
-void VmPowerOff(List Parameter)
+/*void VmPowerOff(List Parameter)
 {
 	println "VmPowerOff method invoked"
 	def Node = Parameter[0].toString()
@@ -119,4 +115,4 @@ void sendMail(List Parameter)
 	println "Subject:$Subject"
 	println "Body:$Body"
 	println "Attachment:$Attachment"
-}
+}*/
