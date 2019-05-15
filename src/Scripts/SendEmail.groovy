@@ -14,15 +14,17 @@ String receivers = values[3]
 String subject = values[4]
 String text = values[5]
 String attachment = values[6]
+println "SystemAdminMailAddress: $SystemAdminMailAddress"
+println "SMTPPort: $SMTPPort"
+println "SMTPHost: $SMTPHost"
+println "receivers: $receivers"
+println "subject: $subject"
+println "text: $text"
+println "attachment: $attachment"
 EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, String attachment)
 }
 def EmailNotification(SystemAdminMailAddress,SMTPPort,SMTPHost,receivers, subject, text, String attachment = null)
 {
-	def EmailConfig = new Scripts.CSVReader()
-	println "SystemAdminMailAddress: $SystemAdminMailAddress"
-	println "SMTPPort: $SMTPPort"
-	println "SMTPHost: $SMTPHost"
-
 	// Constants
 	def instance = Jenkins.getInstance()
 	def mailServer = instance.getDescriptor("hudson.tasks.Mailer")
