@@ -1,6 +1,6 @@
 [@Stage-VmSetup] #Parameter(Node,Network,SnapshotName)
 #Actions,Parameter()
-$VmPowerOff(pa-tst4-ws16,NEPTUNE) $VmRevert(pa-tst4-ws16,NEPTUNE,baseimage) $VmPowerOn(pa-tst4-ws16,NEPTUNE)
+$VmPowerOff(ica-tst21-ws12,NEPTUNE) $VmRevert(pa-tst4-ws16,NEPTUNE,baseimage) $VmPowerOn(ica-tst21-ws12,NEPTUNE)
 $VmPowerOff(pa-tst5-ws16,Neptune) $VmPowerOn(pa-tst5-ws16,neptune)
 
 [@Stage-ServerSetup] #Parameter(BuildOutloc,BuildUrl,Node,ServerExecFile)
