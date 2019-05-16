@@ -10,6 +10,7 @@ void VmOperations(String key,List values)
 	else
 		println "No Methods"
 }
+@NonCPS
 void VmPowerOff(List Parameter)
 {
 	println "VmPowerOff method invoked"
@@ -17,8 +18,9 @@ void VmPowerOff(List Parameter)
 	def Network = Parameter[1].toString()
 	println "Node:$Node"
 	println "Network:$Network"
-	vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node], serverName: Network
+	vSphere buildStep: [$class: 'PowerOff', evenIfSuspended: false, ignoreIfNotExists: false, shutdownGracefully: false, vm: Node.trim()], serverName: Network.trim()
 }
+@NonCPS
 void VmRevert(List Parameter)
 {
 	println "VmRevert method invoked"
@@ -28,7 +30,9 @@ void VmRevert(List Parameter)
 	println "Node:$Node"
 	println "Network:$Network"
 	println "snapshot:$snapshot"
+	vSphere buildStep: [$class: 'RevertToSnapshot', snapshotName: snapshot.trim(), vm: Node.trim()], serverName: Network.trim()
 }
+@NonCPS
 void VmPowerOn(List Parameter)
 {
 	println "VmPowerOn method invoked"
@@ -36,5 +40,5 @@ void VmPowerOn(List Parameter)
 	String Network = Parameter[1]
 	println "Node:$Node"
 	println "Network:$Network"
-	vSphere buildStep: [$class: 'PowerOn', timeoutInSeconds: 260, vm: Node], serverName: Network
+	vSphere buildStep: [$class: 'PowerOn', timeoutInSeconds: 260, vm: Node.trim()], serverName: Network.trim()
 }
