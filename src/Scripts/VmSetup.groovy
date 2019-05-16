@@ -30,7 +30,7 @@ void VmRevert(List Parameter)
 	println "Node:$Node"
 	println "Network:$Network"
 	println "snapshot:$snapshot"
-	vSphere buildStep: [$class: 'RevertToSnapshot', snapshotName: snapshot.trim(), vm: Node.trim()], serverName: Network.trim()
+	//vSphere buildStep: [$class: 'RevertToSnapshot', snapshotName: snapshot.trim(), vm: Node.trim()], serverName: Network.trim()
 }
 @NonCPS
 void VmPowerOn(List Parameter)
